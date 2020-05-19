@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<link rel="stylesheet" type="text/css"
+		href="#{facesContext.externalContext.requestContextPath}/css/style.css"
+		media="screen" />
+</h:head>
+<h:body styleClass="background">
+	<h:form>
+		<p:dataTable var="car" value="#{dtBasicView.cars}">
+			<f:facet name="header">
+            Veículos Cadastrados
+        </f:facet>
+			<p:column headerText="Id">
+				<h:outputText value="#{car.id}" />
+			</p:column>
+
+			<p:column headerText="Tipo">
+				<h:outputText value="#{car.year}" />
+			</p:column>
+
+			<p:column headerText="Marca">
+				<h:outputText value="#{car.brand}" />
+			</p:column>
+
+			<p:column headerText="Modelo">
+				<h:outputText value="#{car.color}" />
+			</p:column>
+
+			<p:column headerText="Cor">
+				<h:outputText value="#{car.color}" />
+			</p:column>
+
+			<p:column headerText="Ano">
+				<h:outputText value="#{car.color}" />
+			</p:column>
+
+			<f:facet name="footer">
+				<p:commandButton align="center" value="Cadastrar Veículo"
+					update="@form" action="/paginas/veiculo/cadastroVeiculo.xhtml" />
+			</f:facet>
+		</p:dataTable>
+	</h:form>
+
+</h:body>
+</html>

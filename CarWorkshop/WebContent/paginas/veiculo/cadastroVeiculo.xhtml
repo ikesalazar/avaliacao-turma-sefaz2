@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css"
+		href="#{facesContext.externalContext.requestContextPath}/css/style.css"
+		media="screen" />
+</h:head>
+
+<h:body styleClass="background">
+	<h:form>
+		<p:panel header="Cadastrar Veículo">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Tipo: " />
+				<p:inputText value="#{VeiculoBean.veiculo.tipo}" />
+				<p:outputLabel value="Marca: " />
+				<p:inputText value="#{VeiculoBean.veiculo.marca}" />
+				<p:outputLabel value="Modelo: " />
+				<p:inputText value="#{VeiculoBean.veiculo.modelo}" />
+				<p:outputLabel value="Cor: " />
+				<p:inputText value="#{VeiculoBean.veiculo.cor}" />
+				<p:outputLabel value="Ano: " />
+				<p:inputText value="#{VeiculoBean.veiculo.ano}" />
+				<p:commandButton value="Salvar" update="@form"
+					actionListener="#{VeiculoBean.criarVeiculo}" />
+			</p:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>
